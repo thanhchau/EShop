@@ -1,6 +1,6 @@
 @extends('admin.main')
 @section('head')
-    <script src="https://cdn.tiny.cloud/1/f4mpdimv2dbub7g4t4p43dlqdtbob7oshhtd8jz8e6ol7pxj/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+
     {{--    <script src="/template/tinymce.min.js"></script>--}}
 @endsection
 @section('content')
