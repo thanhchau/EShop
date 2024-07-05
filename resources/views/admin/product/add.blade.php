@@ -53,7 +53,7 @@
 
                 <div class="form-group">
                     <label>Mô Tả Chi Tiết</label>
-                    <textarea name="content" id="content" class="form-control">{{ old('content') }}</textarea>
+                    <textarea name="content" id="content" class="form-control" rows="10">{{ old('content') }}</textarea>
                 </div>
 
                 <div class="form-group">
@@ -89,10 +89,7 @@
 @section('footer')
     <script>
 
-        tinymce.init({
-            selector: 'textarea#content',
-            license_key: 'f4mpdimv2dbub7g4t4p43dlqdtbob7oshhtd8jz8e6ol7pxj'
-        });
+
     </script>
 @endsection
 
