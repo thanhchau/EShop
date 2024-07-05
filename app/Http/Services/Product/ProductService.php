@@ -38,5 +38,9 @@ class ProductService
             Log::info($ex->getMessage());
         }
     }
+    public function get()
+    {
+        return Product::With("menu")->orderByDesc('id')->paginate(15);
+    }
 
 }
