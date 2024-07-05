@@ -40,7 +40,7 @@ class ProductService
     }
     public function get()
     {
-        return Product::With("menu")->orderByDesc('id')->paginate(15);
+        return Product::With("menu")->orderByDesc('id')->paginate(3);
     }
 
 }
