@@ -57,9 +57,15 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Product $product)
     {
         //
+
+        return view('admin.product.edit',[
+            'title'=>'Cập Nhật Sản Phẩm',
+            'product'=>$product,
+            'menus'=>$this->productService->getMenu()
+        ]);
     }
 
     /**

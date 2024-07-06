@@ -75,6 +75,7 @@ Route::middleware(['auth'])->group(function () {
                 'update'
             ]);
         });
+        //Product
         Route::prefix('products')->group(function (){
             Route::get('/', [
                 ProductController::class,
@@ -87,6 +88,10 @@ Route::middleware(['auth'])->group(function () {
             Route::post('add', [
                 ProductController::class,
                 'store'
+            ]);
+            Route::get('/edit/{product}', [
+                ProductController::class,
+                'show'
             ]);
         });
         Route::post('upload/services', [

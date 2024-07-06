@@ -45,7 +45,7 @@
                         <td>{!! \App\Helper\Menu\Helper::Active($product) !!} </td>
                         <td>{{ $product->updated_at }}</td>
                         <td>
-                            <a href="/admin/products/edit/'.{{ $product->id }}.'" class="btn btn-success btn-sm"> <i class="fas fa-edit"></i> </a>
+                            <a href="/admin/products/edit/{{ $product->id }}" class="btn btn-success btn-sm"> <i class="fas fa-edit"></i> </a>
                             <a href="#" onclick="Remove({{ $product->id }}, 'admin/products/destroy')" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> </a>
                         </td>
                     </tr>

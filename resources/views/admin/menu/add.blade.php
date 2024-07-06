@@ -1,6 +1,6 @@
 @extends('admin.main')
 @section('head')
-    <script src="https://cdn.tiny.cloud/1/f4mpdimv2dbub7g4t4p43dlqdtbob7oshhtd8jz8e6ol7pxj/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+
 {{--    <script src="/template/tinymce.min.js"></script>--}}
 @endsection
 @section('content')
@@ -26,13 +26,11 @@
                 </div>
                 <div class="form-group">
                     <label for="menu">Mô tả ngắn</label>
-                    <textarea name="description" class="form-control" >
-                    </textarea>
+                    <textarea name="description" class="form-control" ></textarea>
                 </div>
                 <div class="form-group">
                     <label for="menu">Mô tả chi tiết</label>
-                    <textarea name="content" id="content" class="form-control">
-                    </textarea>
+                    <textarea name="content" id="content" class="form-control"></textarea>
                 </div>
                 <div class="form-group">
 
@@ -62,11 +60,5 @@
     </div>
 @endsection
 @section('footer')
-    <script>
 
-        tinymce.init({
-            selector: 'textarea#content',
-            license_key: 'f4mpdimv2dbub7g4t4p43dlqdtbob7oshhtd8jz8e6ol7pxj'
-        });
-    </script>
 @endsection
