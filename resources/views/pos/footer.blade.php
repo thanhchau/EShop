@@ -47,11 +47,12 @@
     })
 
     function showCart() {
-        $('#card_list').empty()
+        $('#card_list').empty();
         money = 0;
-        for(i=0;i<cartList.length;i++) {
-            money = cartList[i].price * cartList[i].num
-            $('#card_list').append(`
+        if(cartList.length !=0){
+            for(i=0;i<cartList.length;i++) {
+                money = cartList[i].price * cartList[i].num
+                $('#card_list').append(`
                     <table class="table table-bordered table-striped bg-white table-responsive">
                         <thead>
                             <tr>
@@ -74,8 +75,12 @@
                                 </tr>
                           </tbody>
                     </table>`)
-            totalMoney += money
+                totalMoney += money
+            }
+        }else{
+            totalMoney =0;
         }
+
 
         localStorage.setItem('cartList', JSON.stringify(cartList))
         $('#total_money').html(totalMoney)
@@ -99,7 +104,7 @@
     }
 
     function deleteItem(id) {
-        $('#total_money').html(totalMoney)
+        //$('#total_money').html(totalMoney)
 
         var money1 =0;
         for(i=0;i<cartList.length;i++) {
@@ -107,7 +112,7 @@
             if(cartList[i].id == id) {
                  money1 = cartList[i].price * cartList[i].num;
                 cartList.splice(i, 1);
-                break
+
             }
 
         }
