@@ -4,6 +4,7 @@ namespace App\Http\Services\Product;
 
 use App\Models\Menu;
 use App\Models\Product;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 
@@ -12,6 +13,10 @@ class ProductService
     public function getMenu()
     {
         return Menu::where('active', 1)->get();
+    }
+    public function getCategory()
+    {
+        return DB::table('category')->get();
     }
     public function create($request)
     {

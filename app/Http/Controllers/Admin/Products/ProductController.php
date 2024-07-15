@@ -37,7 +37,8 @@ class ProductController extends Controller
         //
         return view('admin.product.add',[
             'title'=>'Tạo mới sản phẩm',
-            'menus'=>$this->productService->getMenu()
+            'menus'=>$this->productService->getMenu(),
+            'categories'=>$this->productService->getCategory()
 
 
         ]);
