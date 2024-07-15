@@ -94,6 +94,7 @@ Route::middleware(['auth'])->group(function () {
                 'show'
             ]);
         });
+        //Upload
         Route::post('upload/services', [
             UploadController::class,
             'store'
