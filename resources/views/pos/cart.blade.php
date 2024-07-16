@@ -1,4 +1,4 @@
-<div class="col col-lg-4" style="background-color: #eceef1">
+<div class="col col-4" style="background-color: #eceef1">
     <div id="card_list">
 
     </div>
@@ -13,7 +13,7 @@
             Input Money:
         </div>
         <div class="col-md-4" style="float: right; margin-bottom: 20px;">
-            <input type="number" name="cash" value="" class="form-control">
+            <input type="number" name="cash" value="" class="form-control" id="cash">
         </div>
         <div class="col-md-8">
             Cashback:
@@ -23,6 +23,6 @@
     </div>
 
     {{-- <div class="col-md-12">  save --}}
-    <button class="btn btn-success" style="width: 100%; font-size: 20px;" onclick="">Save</button>
+    <button class="btn btn-success" style="width: 100%; font-size: 20px;" onclick="submitOrder()">Save</button>
     {{-- </div> --}}
 </div>

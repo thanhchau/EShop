@@ -7,5 +7,9 @@ Route::middleware('auth')->group(function () {
             \App\Http\Controllers\PosController::class,
            'index'
        ])->name('pos');
+       Route::post('/',[
+           \App\Http\Controllers\PosController::class,
+           'saveorder'
+       ])->name('pos_save');
     });
 });

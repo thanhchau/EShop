@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-@include('pos.head');
+@include('pos.head')
 <body>
 <!-- A grey horizontal navbar that becomes vertical on small screens -->
-@include('pos.navbar');
+@include('pos.navbar')
 <div class="container-fluid">
     <div class="row">
         @include('pos.cart')
-        <div class="col col-lg-8">
+        <div class="col col-8">
             <div class="row" id="data_list">
                 @foreach($datalist as $item)
                     <div class="col-md-4 item" style="text-align: center;" field-thumbnail="{{ $item->thumb }}" field-price="{{ $item->price }}" field-title = "{{ $item->description }}" field-id = "{{ $item->id }}">
@@ -18,7 +18,10 @@
                     </div>
                 @endforeach
             </div>
-            {{ $datalist->links() }}
+            <div id="paging">
+                {{ $datalist->links() }}
+            </div>
+
         </div>
     </div>
 </div>
