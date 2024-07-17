@@ -34,7 +34,7 @@ route::post('/admin/users/login/store', [
 Route::middleware(['auth'])->group(function () {
     // ...
 
-    #Admin
+    #Adminlogin
         Route::prefix('admin')->group(function () {
             Route::get('/', [
                 MainController::class,

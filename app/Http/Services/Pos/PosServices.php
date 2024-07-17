@@ -40,6 +40,18 @@ class PosServices
                 'total_money' => $totalmoney,
                 'order_date' => date('Y-m-d'),
             ]);
+
+           foreach($cartlist as $cart){
+               DB::table('oder_detail')->insert([
+                   'order_id' => $r->id,
+                   'product_id' => $cart['id'],
+                   'price'=> $cart['price'],
+                   'amount' => $cart['num'],
+                   'total_money'=>$cart['price'] * $cart['num'],
+                   'created_at'  => date('Y-m-d H:i:s'),
+                   'updated_at'  => date('Y-m-d H:i:s')
+               ]);
+           }
             //dd($r);
             return "ok";
         }catch (\Exception $exception){

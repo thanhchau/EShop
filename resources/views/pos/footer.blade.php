@@ -168,12 +168,16 @@
         var json = localStorage.getItem('cartList');
         $.post('{{ route('pos_save') }}',
             {
-                data:cartlist,
+                data:json,
                 totalMoney : totalMoney,
                 '_token':'{{ csrf_token() }}'
             },function(response){
-                alert(response);
+               if(!response.error){
+                   alert(response.message);
+                   localStorage.removeItem('cartList')
+                   location.reload()
+               }
 
-        });
+            });
     }
 </script>
