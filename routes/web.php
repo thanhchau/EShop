@@ -53,7 +53,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('add', [
                 MenuController::class,
                 'create'
-            ]);
+            ])->name('menu_add');
             Route::post('add', [
                 MenuController::class,
                 'store'
@@ -61,7 +61,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('list', [
                 MenuController::class,
                 'index'
-            ]);
+            ])->name('menu_list');
             Route::delete('destroy', [
                 MenuController::class,
                 'destroy'
@@ -69,7 +69,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('edit/{menu}', [
                 MenuController::class,
                 'show'
-            ]);
+            ])->name('edit_menu');
             Route::post('edit/{menu}', [
                 MenuController::class,
                 'update'
@@ -84,7 +84,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('add', [
                 ProductController::class,
                 'create'
-            ]);
+            ])->name('product_add');
             Route::post('add', [
                 ProductController::class,
                 'store'
