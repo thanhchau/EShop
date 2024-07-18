@@ -48,7 +48,25 @@ class PermissionController extends Controller
     }
     public function savesetting(Request $request)
     {
-        dd($request);
+        $route_id = $request->route_id;
+        $role_id = $request->role_id;
+        $status = $request->status;
+        $data = DB::table('permissions')
+            ->where('route_id', $route_id)
+            ->where('role_id', $role_id)->get();
+        if($data != null&&$data->count() > 0){
+            DB::table('permissions')
+                ->where('route_id', $route_id)
+                ->where('role_id', $role_id)->update(['status' => $status]);
+        }else{
+            DB::table('permissions')
+                ->where('route_id', $route_id)
+                ->where('role_id', $role_id)->insert([
+                    'route_id' => $route_id,
+                    'role_id' => $role_id,
+                    'status' => $status
+                ]);
+        }
 
     }
 }
