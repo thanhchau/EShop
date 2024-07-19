@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\DB;
 class PermissionController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('permission');
+    }
     public function viewroles(Request $request)
     {
         $rolelist = DB::table('roles')->orderByDesc('id')->get();
@@ -57,7 +61,7 @@ class PermissionController extends Controller
         if($data != null&&$data->count() > 0){
             DB::table('permissions')
                 ->where('route_id', $route_id)
-                ->where('role_id', $role_id)->update(['status' => $status]);
+                ->where('role_id', $role_id)->first()->update(['status' => $status]);
         }else{
             DB::table('permissions')
                 ->where('route_id', $route_id)
