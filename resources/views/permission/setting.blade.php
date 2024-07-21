@@ -22,8 +22,8 @@
                     <td>{{ $item['route_title'] }}</td>
                     <td>
                         <select class="form-control" name="status" onchange="UpdatePermission(this,{{ $item['route_id'] }},{{ $role_id }})">
-                            <option value="1" {{ $item['status'] ==1?'selected':''}}>Enable</option>
-                            <option value="0" {{ $item['status'] ==0?'selected':''}}>Disable</option>
+                            <option value="1" {{ $item['status'] == 1 ?'selected':''}}>Enable</option>
+                            <option value="0" {{ $item['status'] == 0?'selected':''}}>Disable</option>
                         </select>
                     </td>
                 </tr>

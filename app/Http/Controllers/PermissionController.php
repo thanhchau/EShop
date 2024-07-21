@@ -32,7 +32,7 @@ class PermissionController extends Controller
             $status =0;
                 foreach($permissions as $item1){
                     if($item1->route_id == $item->id){
-                        $status =1;
+                        $status = $item1->status;
                     }
                 }
                 $list[] = [
@@ -42,6 +42,7 @@ class PermissionController extends Controller
                     'status'      => $status
                 ];
         }
+
         return view('permission.setting',[
             'index'=>0,
             'permissionList' => $list,
@@ -61,7 +62,7 @@ class PermissionController extends Controller
         if($data != null&&$data->count() > 0){
             DB::table('permissions')
                 ->where('route_id', $route_id)
-                ->where('role_id', $role_id)->first()->update(['status' => $status]);
+                ->where('role_id', $role_id)->update(['status' => $status]);
         }else{
             DB::table('permissions')
                 ->where('route_id', $route_id)
