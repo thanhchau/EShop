@@ -19,9 +19,10 @@ use \App\Http\Controllers\Admin\Products\UploadController;
 |
 */
 
-Route::get('/', function () {
-    return redirect('/admin/users/login');
-});
+Route::get('/', [
+  \App\Http\Controllers\MainController::class,
+    'index'
+]);
 
 Route::get('/admin/users/login', [
     LoginController::class,
