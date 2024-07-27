@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
 @include("head")
-<body class="animsition">
-
+{{--<body class="animsition">--}}
+<body>
 <!-- Header -->
 @include("header")
 
