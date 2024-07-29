@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Helper\Menu;
+use Illuminate\Support\Str;
 
 class Helper
 {
@@ -42,4 +43,35 @@ class Helper
         }
 
     }
+    public static function ShowMenu($menus, $parentId = 0)
+    {
+
+        $html = '';
+        foreach ($menus as $key => $menu){
+            if($menu->parent_id == $parentId){
+                $html .= '<li><a href="/danh-muc/'.$menu->id.'-'.str::slug($menu->name).'.html" style="font-family:sans-serif">'
+                            .$menu->name.'</a>';
+                unset($menus[$key]);
+
+            }
+            if(self::isChild($menus,$menu->id)){
+                $html .= '<ul class="sub-menu">';
+                $html .= self::ShowMenu($menus,$menu->id);
+                $html .='</ul>';
+            }
+            $html .= '</li>';
+        }
+        return $html;
+    }
+    public static function isChild($menus, $menu_id) : bool
+    {
+        foreach ($menus as $menu){
+            if($menu->parent_id == $menu_id){
+                return true;
+
+            }
+        }
+        return false;
+    }
+
 }

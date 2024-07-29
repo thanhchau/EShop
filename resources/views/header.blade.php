@@ -3,7 +3,7 @@
     <div class="container-menu-desktop">
         <!-- Topbar -->
 
-        {{ dd($menus) }}
+
         <div class="wrap-menu-desktop">
             <nav class="limiter-menu-desktop container">
 
