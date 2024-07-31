@@ -26,6 +26,7 @@ class ProductController extends Controller
            ProductController::class,
            'title'=>'Danh Sách Sản Phẩm',
            'products'=>$this->productService->get(),
+
         ]);
     }
 

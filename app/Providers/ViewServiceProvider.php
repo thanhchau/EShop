@@ -14,5 +14,6 @@ class ViewServiceProvider extends ServiceProvider
          }
          public function boot(){
             View::composer('header', MenuComposer::class);
+             View::composer('banner', MenuComposer::class);
          }
 }
