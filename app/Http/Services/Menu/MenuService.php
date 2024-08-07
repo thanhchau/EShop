@@ -11,6 +11,7 @@ class MenuService
         try {
             $rs =  Menu::create([
                 'name' => (string)$request->input('name'),
+                'thumb' => (string)$request->input('thumb'),
                 'parent_id' => (string)$request->input('parent_id'),
                 'description' => (string)$request->input('description'),
                 'content' => (string)$request->input('content'),

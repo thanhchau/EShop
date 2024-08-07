@@ -10,10 +10,12 @@ class Menu extends Model
     use HasFactory;
     protected $fillable =[
         'name',
+        'thumb',
         'parent_id',
         'description',
         'content',
         'active'
+
 
     ];
 }

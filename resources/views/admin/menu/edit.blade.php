@@ -31,9 +31,16 @@
                 </div>
                 <div class="form-group">
                     <label for="menu">Mô tả chi tiết</label>
-                    <textarea name="content" id="content" class="form-control">
-                        {{ $menu->content }}
+                    <textarea name="content" id="content1" class="form-control">{{ $menu->content }}
                     </textarea>
+                </div>
+                <div class="form-group">
+                    <label for="menu">Ảnh Minh Hoạ</label>
+                    <input type="file"  class="form-control" id="upload">
+                    <div id="image_show">
+                        <img src="{{ $menu->thumb ? $menu->thumb: '' }}" width="100px"/>
+                    </div>
+                    <input type="hidden" name="thumb" id="thumb" value="{{ $menu->thumb ? $menu->thumb: '' }}">
                 </div>
                 <div class="form-group">
 
